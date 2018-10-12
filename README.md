@@ -14,3 +14,7 @@ create their web components with lit-element from polymer.
  2. code your webcomponent in ./src/index.js
  3. got to your terminal (cmd on windows) ```npm run build``` in the same directory
  4. publish to npm or import index.js as a script tag.
+
+# lit-element
+For more documentation about all the methods that are available in ./src/index.js
+check https://github.com/Polymer/lit-element
