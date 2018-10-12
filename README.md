@@ -17,4 +17,4 @@ create their web components with lit-element from polymer.
 
 # lit-element
 For more documentation about all the methods that are available in ./src/index.js
-check https://github.com/Polymer/lit-element
+check https://github.com/Polymer/lit-element / https://github.com/Polymer/lit-element#bigger-example
