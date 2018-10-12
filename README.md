@@ -1,0 +1,16 @@
+# Web Component Webpack Bootstrap
+
+This is a bootstrap github to give developers a quick startup project to
+create their web components with lit-element from polymer.
+
+#### todo
+- Add eslint
+- Add more examples
+- Add more documentation
+- Add reference for future yeoman generator
+
+### How to start?
+ 1. clone project
+ 2. code your webcomponent in ./src/index.js
+ 3. got to your terminal (cmd on windows) ```npm run build``` in the same directory
+ 4. publish to npm or import index.js as a script tag.
