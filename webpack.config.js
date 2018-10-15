@@ -30,10 +30,6 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.lit\.html$/,
-          loader: 'lit-loader',
-        },
-        {
           test: /\.css$/,
           use: [
             {
