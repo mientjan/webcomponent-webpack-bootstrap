@@ -59,10 +59,12 @@ export default class SpecialVideoElement extends LitElement {
    */
   render() {
 
-    console.log(this.shadowRoot);
     const result = html`
 	  <style>${cssCode}</style>
-	  <video src="${this.src}" width="${this.width}" height="${this.height}"></video>
+	  <div class="wrapper">
+	    <div class="close">X</div>
+	    <video src="${this.src}" width="${this.width}" height="${this.height}"></video>
+    </div>
 `;
 
     return result;

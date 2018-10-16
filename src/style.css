@@ -5,3 +5,13 @@ span {
   text-align: center;
   font-weight: bold;
 }
+
+.wrapper {
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
