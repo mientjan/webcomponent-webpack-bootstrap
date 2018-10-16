@@ -1,25 +1,39 @@
 const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 // const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
 
 module.exports = (env, argv) => {
+  let mode = 'production';
   const entry = ['@babel/polyfill'];
   const plugins = [];
   let devtool = 'inline-source-map';
 
   if (argv.mode === 'development') {
+    mode = 'development';
     // entry.push(`webpack-hot-middleware/client`);
-	// plugins.push(new webpack.HotModuleReplacementPlugin())
+    // plugins.push(new webpack.HotModuleReplacementPlugin())
+    plugins.push(
+      new HtmlWebpackPlugin({
+        title: 'My App',
+        template: './src/index.html',
+        filename: './index.html',
+      }),
+    );
   }
+
+  console.log(argv.mode);
 
   if (argv.mode === 'production') {
     devtool = false;
+    plugins.push(new BundleAnalyzerPlugin());
   }
 
   entry.push(`./src/index.js`);
 
   const config = {
+    mode,
     entry,
 
     output: {

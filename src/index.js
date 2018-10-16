@@ -4,13 +4,17 @@ import cssCode from './style.css';
 /**
  *
  */
-export default class PleaseRename extends LitElement {
+export default class SpecialVideoElement extends LitElement {
   /**
    * Defined Element Properties
    * @return {Object}
    */
   static get properties() {
-    return {};
+    return {
+      src: String,
+      width: Number,
+      height: Number,
+    };
   }
 
   /**
@@ -18,6 +22,10 @@ export default class PleaseRename extends LitElement {
    */
   constructor() {
     super();
+
+    this.src = 'https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ef/Running_Stream_Of_Water.webm/Running_Stream_Of_Water.webm.360p.webm';
+    this.width = 100;
+    this.height = 100;
   }
 
   /**
@@ -35,6 +43,10 @@ export default class PleaseRename extends LitElement {
     return true
   }
 
+  addEventListener(type, func){
+
+  }
+
   /**
    * Implement to describe the element's DOM using lit-html. Ideally, the render
    * implementation is a pure function using only the element's current properties to describe the
@@ -46,12 +58,12 @@ export default class PleaseRename extends LitElement {
    */
   render() {
     const result = html`
-	  <style> /* place css code in style */</style>
-	  <div> <!-- place html --> </div>
+	  <style>${cssCode}</style>
+	  <video src="${this.src}" width="${this.width}" height="${this.height}"></video>
 `;
 
     return result;
   }
 }
 
-window.customElements.define('please-rename', PleaseRename);
+window.customElements.define('special-video-element', SpecialVideoElement);
