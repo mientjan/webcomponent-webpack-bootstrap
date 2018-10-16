@@ -6,8 +6,8 @@
   "scripts": {
     "build": "webpack --config webpack.config.js --mode=production",
     "build:dev": "webpack --config webpack.config.js --mode=development",
-    "dev": "webpack --config webpack.config.js --mode=development",
-    "test": "wct --npm --config-file wct.config.json"
+    "dev": "webpack-dev-server --mode=development",
+    "test": "SAUCE_USERNAME='' SAUCE_ACCESS_KEY='' wct --npm --config-file wct.config.json"
   },
   "repository": {
     "type": "git",
@@ -50,7 +50,9 @@
     "wct-browser-legacy": "^1.0.1",
     "web-component-tester": "^6.8.0",
     "webpack": "^4.20.2",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
     "webpack-hot-middleware": "^2.24.3"
   },
   "dependencies": {

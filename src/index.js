@@ -44,7 +44,8 @@ export default class SpecialVideoElement extends LitElement {
   }
 
   addEventListener(type, func){
-
+    const videoElement = this.shadowRoot.querySelector('video');
+    videoElement.addEventListener(type, func);
   }
 
   /**
@@ -57,6 +58,8 @@ export default class SpecialVideoElement extends LitElement {
    * @return {TemplateResult}
    */
   render() {
+
+    console.log(this.shadowRoot);
     const result = html`
 	  <style>${cssCode}</style>
 	  <video src="${this.src}" width="${this.width}" height="${this.height}"></video>
