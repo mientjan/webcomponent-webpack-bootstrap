@@ -8,11 +8,11 @@
 
 </head>
 <body>
-<awesome-element id="fixture"></awesome-element>
+<special-video-element id="fixture"></special-video-element>
 <script>
-  suite('<awesome-element>', function() {
-    test('is awesomest', function() {
-      assert.isTrue(document.getElementById('fixture').awesomest);
+  suite('<special-video-element>', function() {
+    test('autoplay property', function() {
+      assert.isFalse(document.getElementById('fixture').autoplay);
     });
   });
 </script>

@@ -4,7 +4,7 @@ import cssCode from './style.css';
 /**
  *
  */
-export default class SpecialVideoElement extends LitElement {
+class SpecialVideoElement extends LitElement {
   /**
    * Defined Element Properties
    * @return {Object}
@@ -14,6 +14,7 @@ export default class SpecialVideoElement extends LitElement {
       src: String,
       width: Number,
       height: Number,
+      autoplay: Boolean,
     };
   }
 
@@ -26,6 +27,7 @@ export default class SpecialVideoElement extends LitElement {
     this.src = 'https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ef/Running_Stream_Of_Water.webm/Running_Stream_Of_Water.webm.360p.webm';
     this.width = 100;
     this.height = 100;
+    this.autoplay = false;
   }
 
   /**
@@ -40,6 +42,8 @@ export default class SpecialVideoElement extends LitElement {
    * @return {boolean}
    */
   shouldUpdate(changedProperties){
+
+    console.log(changedProperties);
     return true
   }
 
@@ -54,6 +58,9 @@ export default class SpecialVideoElement extends LitElement {
    * element template. Note, since render() is called by update(), setting properties does not
    * trigger an update, allowing property values to be computed and validated.
    *
+   * The render method uses lit-html for rendering its html.
+   * Check https://polymer.github.io/lit-html/guide/writing-templates for more information.
+   *
    * @protected
    * @return {TemplateResult}
    */
@@ -63,7 +70,7 @@ export default class SpecialVideoElement extends LitElement {
 	  <style>${cssCode}</style>
 	  <div class="wrapper">
 	    <div class="close">X</div>
-	    <video src="${this.src}" width="${this.width}" height="${this.height}"></video>
+	    <video src="${this.src}" width="${this.width}" height="${this.height}" ?autoplay=${this.autoplay}></video>
     </div>
 `;
 
