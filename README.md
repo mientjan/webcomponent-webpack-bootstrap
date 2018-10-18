@@ -13,7 +13,8 @@ create their web components with lit-element from polymer.
  6. add
 
 __todo__
-* test bootstrap for all compatible browser matrix.
+* ~~add default unit test setup for webcomponents~~
+* ~~test bootstrap for all compatible browser matrix.~~
 * add post-css support to css.
 * add quick development setup with webpack hot-reload support.
 * Use babel preset-env "useBuiltIns: 'usage'" when feature is stable.
