@@ -48,6 +48,12 @@ conceivable platform imaginable. Create a account, a .env file in the
 root and set your SAUCE_USERNAME and SAUCE_ACCESS_KEY in there or
 rename placeholder.env to .env
 
+```text
+SAUCE_USERNAME=your_user_name
+SAUCE_ACCESS_KEY=your-access-key-that-is-here
+
+```
+
 ### lit-element
 For more documentation about all the methods that are available in ./src/index.js
 check https://github.com/Polymer/lit-element / https://github.com/Polymer/lit-element#bigger-example
