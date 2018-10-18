@@ -13,3 +13,4 @@ node_modules/
 /dist/
 
 ## only ignore in git
+/.env
