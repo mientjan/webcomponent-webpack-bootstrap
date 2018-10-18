@@ -3,28 +3,7 @@
 This is a bootstrap github to give developers a quick startup project to
 create their web components with lit-element from polymer.
 
-### How to start?
-
- 1. clone project
- 2. run ```npm install```
- 3. code your webcomponent in ./src/index.js
- 4. got to your terminal (cmd on windows) ```npm run build``` in the same directory
- 5. publish to npm or import index.js as a script tag.
-
- __testing localy?__
-
- 1. add or change the unit tests examples defined in test.html
- 2. run ```npm run test```
-
-__testing saucelabs?__
-
- 1. create account on saucelabs
- 2. rename placeholder.env to .env
- 3. add your saucelabs username to SAUCE_USERNAME=sauce_labs_username
- 4. add your saucelabs access key to SAUCE_ACCESS_KEY=your-access-key
- 5. run ```npm run test:saucelabs```
-
-__todo__
+## todo
 * ~~add default unit test setup for webcomponents~~
 * ~~test bootstrap for all compatible browser matrix.~~
 * add post-css support to css.
@@ -35,6 +14,27 @@ __todo__
 * Add more documentation
 * Add more examples
 * Add reference for future yeoman generator
+
+## How to start?
+
+ 1. clone project
+ 2. run ```npm install```
+ 3. code your webcomponent in ./src/index.js
+ 4. got to your terminal (cmd on windows) ```npm run build``` in the same directory
+ 5. publish to npm or import index.js as a script tag.
+
+### testing localy?
+
+ 1. add or change the unit tests examples defined in test.html
+ 2. run ```npm run test```
+
+### testing saucelabs?
+
+ 1. create account on saucelabs
+ 2. rename placeholder.env to .env
+ 3. add your saucelabs username to SAUCE_USERNAME=sauce_labs_username
+ 4. add your saucelabs access key to SAUCE_ACCESS_KEY=your-access-key
+ 5. run ```npm run test:saucelabs```
 
 ## unit tests
 
@@ -48,7 +48,7 @@ browsers, or remotely, via Sauce Labs. It is built on top of popular third-party
 * Selenium for running tests against multiple browsers.
 * Accessibility Developer Tools for accessibility audits.
 
-### lead by example
+## lead by example
 For demonstration purposes we added some testing scripts in test/* so you
 can learn by example. We will use a "special" video element as a nice fixture
 because there is a lot to test with a video element on different devices and
@@ -67,6 +67,6 @@ SAUCE_ACCESS_KEY=your-access-key-that-is-here
 
 ```
 
-### lit-element
+## lit-element
 For more documentation about all the methods that are available in ./src/index.js
 check https://github.com/Polymer/lit-element / https://github.com/Polymer/lit-element#bigger-example
