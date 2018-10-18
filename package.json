@@ -7,7 +7,8 @@
     "build": "webpack --config webpack.config.js --mode=production",
     "build:dev": "webpack --config webpack.config.js --mode=development",
     "dev": "webpack-dev-server --mode=development",
-    "test": "node -r dotenv/config ./test.js --npm --config-file wct.saucelabs.config.json"
+    "test": "wct --npm --config-file wct.local.config.json",
+    "test:saucelabs": "node -r dotenv/config ./test.js --npm --config-file wct.saucelabs.config.json"
   },
   "repository": {
     "type": "git",
