@@ -12,7 +12,6 @@ create their web components with lit-element from polymer.
  5. publish to npm or import index.js as a script tag.
  6. add
 
-
 __todo__
 * test bootstrap for all compatible browser matrix.
 * add post-css support to css.
@@ -23,6 +22,8 @@ __todo__
 * Add more documentation
 * Add more examples
 * Add reference for future yeoman generator
+
+## UNIT tests
 
 ### lit-element
 For more documentation about all the methods that are available in ./src/index.js

@@ -2,17 +2,33 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <script src="../node_modules/@webcomponentsjs/webcomponents-lite.js"></script>
+  <!--<script src="../node_modules/@webcomponentsjs/webcomponents-lite.js"></script>-->
+  <!--<script src="../node_modules/web-component-tester/browser.js"></script>-->
+
+
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
   <script src="../node_modules/web-component-tester/browser.js"></script>
   <script src="../dist/index.js"></script>
 
 </head>
 <body>
-<special-video-element id="fixture"></special-video-element>
+
+<test-fixture id="test-element-fixture">
+  <template>
+    <special-video-element src="https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ef/Running_Stream_Of_Water.webm/Running_Stream_Of_Water.webm.360p.webm"></special-video-element>
+  </template>
+</test-fixture>
+
+
 <script>
-  suite('<special-video-element>', function() {
-    test('autoplay property', function() {
-      assert.isFalse(document.getElementById('fixture').autoplay);
+
+  suite('<special-video-element>', () => {
+    var element;
+    setup(function(){
+      element = fixture('test-element-fixture');
+    });
+    test('check if autoplay is default false', function(){
+      assert.isFalse(element.autoplay);
     });
   });
 </script>

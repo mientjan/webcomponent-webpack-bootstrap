@@ -24,7 +24,7 @@ class SpecialVideoElement extends LitElement {
   constructor() {
     super();
 
-    this.src = 'https://upload.wikimedia.org/wikipedia/commons/transcoded/e/ef/Running_Stream_Of_Water.webm/Running_Stream_Of_Water.webm.360p.webm';
+    this.src = '';
     this.width = 100;
     this.height = 100;
     this.autoplay = false;

@@ -1,0 +1,6 @@
+{
+  "verbose": true,
+  "plugins": {
+    "browsers": ["chrome"]
+  }
+}

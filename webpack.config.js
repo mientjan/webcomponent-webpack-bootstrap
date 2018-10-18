@@ -23,11 +23,11 @@ module.exports = (env, argv) => {
     );
   }
 
-  console.log(argv.mode);
-
   if (argv.mode === 'production') {
     devtool = false;
-    plugins.push(new BundleAnalyzerPlugin());
+
+    // enable to analize your build.
+    // plugins.push(new BundleAnalyzerPlugin());
   }
 
   entry.push(`./src/index.js`);
