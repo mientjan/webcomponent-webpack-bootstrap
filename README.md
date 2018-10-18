@@ -48,7 +48,8 @@ conceivable platform imaginable. Create a account, a .env file in the
 root and set your SAUCE_USERNAME and SAUCE_ACCESS_KEY in there or
 rename placeholder.env to .env
 
-```text
+```js
+// .env file
 SAUCE_USERNAME=your_user_name
 SAUCE_ACCESS_KEY=your-access-key-that-is-here
 
