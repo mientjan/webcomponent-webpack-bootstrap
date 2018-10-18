@@ -48,7 +48,7 @@ browsers, or remotely, via Sauce Labs. It is built on top of popular third-party
 * Selenium for running tests against multiple browsers.
 * Accessibility Developer Tools for accessibility audits.
 
-## lead by example
+### lead by example
 For demonstration purposes we added some testing scripts in test/* so you
 can learn by example. We will use a "special" video element as a nice fixture
 because there is a lot to test with a video element on different devices and
