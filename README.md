@@ -10,7 +10,19 @@ create their web components with lit-element from polymer.
  3. code your webcomponent in ./src/index.js
  4. got to your terminal (cmd on windows) ```npm run build``` in the same directory
  5. publish to npm or import index.js as a script tag.
- 6. add
+
+ __testing localy?__
+
+ 1. add or change the unit tests examples defined in test.html
+ 2. run ```npm run test```
+
+__testing saucelabs?__
+
+ 1. create account on saucelabs
+ 2. rename placeholder.env to .env
+ 3. add your saucelabs username to SAUCE_USERNAME=sauce_labs_username
+ 4. add your saucelabs access key to SAUCE_ACCESS_KEY=your-access-key
+ 5. run ```npm run test:saucelabs```
 
 __todo__
 * ~~add default unit test setup for webcomponents~~
