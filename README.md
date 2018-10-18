@@ -16,7 +16,7 @@ __todo__
 * ~~add default unit test setup for webcomponents~~
 * ~~test bootstrap for all compatible browser matrix.~~
 * add post-css support to css.
-* add quick development setup with webpack hot-reload support.
+* ~~add quick development setup~~ with webpack hot-reload support.
 * Use babel preset-env "useBuiltIns: 'usage'" when feature is stable.
 * add option to opt out of required library data. So its required once.
 * Add eslint
