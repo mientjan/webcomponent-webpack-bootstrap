@@ -1,6 +1,6 @@
 {
   "name": "webcomponent-webpack-bootstrap",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Standard bootstrap for a webcomponent using litElement en lit-loader",
   "main": "dist/index.js",
   "scripts": {
