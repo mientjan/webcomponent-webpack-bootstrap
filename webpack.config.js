@@ -1,14 +1,13 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-// const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const webpack = require('webpack');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (env, argv) => {
   let mode = 'production';
   const entry = ['@babel/polyfill'];
   const plugins = [];
   let devtool = 'inline-source-map';
+  const destinationDir = path.resolve(__dirname, './dist');
 
   if (argv.mode === 'development') {
     mode = 'development';
@@ -28,6 +27,22 @@ module.exports = (env, argv) => {
 
     // enable to analize your build.
     // plugins.push(new BundleAnalyzerPlugin());
+
+    plugins.push(
+      new HtmlWebpackPlugin({
+        title: 'My Web Component',
+        template: './src/index.html',
+        filename: './demo.html',
+      }),
+    );
+
+
+    plugins.push(
+
+      new CopyWebpackPlugin([{
+        from: './src/manifest.json', to: destinationDir
+      }])
+    );
   }
 
   entry.push(`./src/index.js`);
@@ -37,7 +52,7 @@ module.exports = (env, argv) => {
     entry,
 
     output: {
-      path: path.resolve(__dirname, './dist'),
+      path: destinationDir,
       filename: 'index.js',
     },
 

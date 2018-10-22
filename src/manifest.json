@@ -1,0 +1,69 @@
+{
+  "name": "Special Video Element",
+  "type": "special-video-element",
+  "tagName": "special-video-element",
+  "icon": "http://path/to/icon.jpg",
+  "version": 100,
+  "description": "Generates a QR code image for the specified data.",
+  "files": {
+    "js": [
+      "index.js"
+    ],
+    "css":[
+      "style.css"
+    ]
+  },
+  "externalScripts": [
+    "https://www.google.com/path/to/external/script"
+  ],
+  "dependencies": [
+    "video"
+  ],
+  "attributes": [
+    {
+      "name":"autoplay",
+      "label":"A human readable name",
+      "type":"The data type of the attribute",
+      "description": "A couple of sentences describing the attribute",
+      "required": false,
+      "defaultValue": false,
+      "min": 0,
+      "max": 100,
+      "gwdSpecific": {
+        "important": true,
+        "label": "The key in the strings file for translation",
+        "advanced": true,
+        "v1Name": "The name of this attribute in GWD v1"
+      }
+    }
+  ],
+  "methods": [
+    {
+      "name": "Name of the method",
+      "label": "A human readable label",
+      "description": "A couple of sentences describing the method",
+      "parameters": [
+        {
+          "name": "",
+          "label": "Object",
+          "type": "Object"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "name": "Name of the event",
+      "label": "A human friendly name for the event",
+      "description": "A couple of sentences describing the event",
+      "parameters": "The parameters or the event. It is just the Event object by default"
+    }
+  ],
+  "metrics": [
+    {
+      "eventName": "Event occurrence that must trigger this metric",
+      "metric": "The metric text to report"
+    }
+  ],
+  "nestable": false
+}

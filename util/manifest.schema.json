@@ -1,0 +1,430 @@
+{
+  "definitions": {
+    "parameter": {
+      "type": "object",
+      "title": "The Parameter Schema",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": [""],
+          "pattern": "^(.*)$"
+        },
+        "label": {
+          "type": "string",
+          "title": "The Label Schema",
+          "default": "",
+          "examples": ["Object"],
+          "pattern": "^(.*)$"
+        },
+        "type": {
+          "type": "string",
+          "title": "The Type Schema",
+          "default": "",
+          "examples": ["Object"],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "event": {
+      "type": "object",
+      "title": "The Items Schema",
+      "required": ["name", "label", "description", "parameters"],
+      "properties": {
+        "name": {
+          "$id": "#/properties/events/items/properties/name",
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": ["Name of the event"],
+          "pattern": "^(.*)$"
+        },
+        "label": {
+          "$id": "#/properties/events/items/properties/label",
+          "type": "string",
+          "title": "The Label Schema",
+          "default": "",
+          "examples": ["A human friendly name for the event"],
+          "pattern": "^(.*)$"
+        },
+        "description": {
+          "$id": "#/properties/events/items/properties/description",
+          "type": "string",
+          "title": "The Description Schema",
+          "default": "",
+          "examples": ["A couple of sentences describing the event"],
+          "pattern": "^(.*)$"
+        },
+        "parameters": {
+          "$id": "#/properties/events/items/properties/parameters",
+          "type": "string",
+          "title": "The Parameters Schema",
+          "default": "",
+          "examples": ["The parameters or the event. It is just the Event object by default"],
+          "pattern": "^(.*)$"
+        }
+      }
+    },
+    "method": {
+      "type": "object",
+      "title": "The Items Schema",
+      "required": ["name", "label", "description", "parameters"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "The Name Schema",
+          "default": "",
+          "examples": ["Name of the method"],
+          "pattern": "^(.*)$"
+        },
+        "label": {
+          "type": "string",
+          "title": "The Label Schema",
+          "default": "",
+          "examples": ["A human readable label"],
+          "pattern": "^(.*)$"
+        },
+        "description": {
+          "type": "string",
+          "title": "The Description Schema",
+          "default": "",
+          "examples": ["A couple of sentences describing the method"],
+          "pattern": "^(.*)$"
+        },
+        "parameters": {
+          "type": "array",
+          "title": "The Description Schema",
+          "default": "",
+          "examples": ["A couple of sentences describing the method"],
+          "items":{
+            "$ref": "#/definitions/parameter"
+          }
+        }
+      }
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "http://example.com/root.json",
+  "type": "object",
+  "title": "The Root Schema",
+  "author":"Mient-jan Stelling",
+  "properties": {
+    "name": {
+      "$id": "#/properties/name",
+      "type": "string",
+      "title": "The Name Schema",
+      "default": "",
+      "examples": ["Special Video Element"],
+      "pattern": "^(.*)$"
+    },
+    "type": {
+      "$id": "#/properties/type",
+      "type": "string",
+      "title": "The Type Schema",
+      "default": "",
+      "examples": ["special-video-element"],
+      "pattern": "^(.*)$"
+    },
+    "tagName": {
+      "$id": "#/properties/tagName",
+      "type": "string",
+      "title": "The Tagname Schema",
+      "default": "",
+      "examples": ["special-video-element"],
+      "pattern": "^(.*)$"
+    },
+    "icon": {
+      "$id": "#/properties/icon",
+      "type": "string",
+      "title": "The Icon Schema",
+      "default": "",
+      "examples": ["http://path/to/icon.jpg"],
+      "pattern": "^(.*)$",
+      "format": "uri-reference"
+    },
+    "version": {
+      "$id": "#/properties/version",
+      "type": "number",
+      "title": "The Version Schema",
+      "default": 0,
+      "examples": [100]
+    },
+    "description": {
+      "$id": "#/properties/description",
+      "type": "string",
+      "title": "The Description Schema",
+      "default": "",
+      "examples": ["Generates a QR code image for the specified data."],
+      "pattern": "^(.*)$"
+    },
+    "files": {
+      "$id": "#/properties/files",
+      "type": "object",
+      "title": "The Files Schema",
+      "default": null,
+      "properties": {
+        "js": {
+          "$id": "#/properties/files/properties/js",
+          "type": "array",
+          "title": "The Js Schema",
+          "default": null,
+          "items": {
+            "$id": "#/properties/files/properties/js/items",
+            "type": "string",
+            "title": "The Items Schema",
+            "default": "",
+            "examples": ["qr.js", "myqrcode.js"],
+            "pattern": "^(.*)$",
+            "format": "uri-reference"
+          }
+        },
+        "css": {
+          "$id": "#/properties/files/properties/css",
+          "type": "array",
+          "title": "The Css Schema",
+          "default": null,
+          "items": {
+            "$id": "#/properties/files/properties/css/items",
+            "type": "string",
+            "title": "The Items Schema",
+            "default": "",
+            "examples": ["style.css"],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "externalScripts": {
+      "$id": "#/properties/externalScripts",
+      "type": "array",
+      "title": "The Externalscripts Schema",
+      "default": null,
+      "uniqueItems": true,
+      "items": {
+        "$id": "#/properties/externalScripts/items",
+        "type": "string",
+        "title": "The Items Schema",
+        "default": "",
+        "examples": ["https://www.google.com/path/to/external/script"],
+        "pattern": "^(.*)$"
+      }
+    },
+    "dependencies": {
+      "$id": "#/properties/dependencies",
+      "type": "array",
+      "title": "The Dependencies Schema",
+      "default": null,
+      "items": {
+        "$id": "#/properties/dependencies/items",
+        "type": "string",
+        "title": "The Items Schema",
+        "default": "",
+        "examples": ["video"],
+        "pattern": "^(.*)$"
+      }
+    },
+    "attributes": {
+      "$id": "#/properties/attributes",
+      "type": "array",
+      "title": "The Attributes Schema",
+      "default": null,
+      "items": {
+        "$id": "#/properties/attributes/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": ["name", "label", "type", "description", "required", "defaultValue", "min", "max", "gwdSpecific"],
+        "properties": {
+          "name": {
+            "$id": "#/properties/attributes/items/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": ["autoplay"],
+            "pattern": "^(.*)$"
+          },
+          "label": {
+            "$id": "#/properties/attributes/items/properties/label",
+            "type": "string",
+            "title": "The Label Schema",
+            "default": "",
+            "examples": ["A human readable name"],
+            "pattern": "^(.*)$"
+          },
+          "type": {
+            "$id": "#/properties/attributes/items/properties/type",
+            "type": "string",
+            "title": "The Type Schema",
+            "default": "",
+            "examples": ["The data type of the attribute"],
+            "pattern": "^(.*)$"
+          },
+          "description": {
+            "$id": "#/properties/attributes/items/properties/description",
+            "type": "string",
+            "title": "The Description Schema",
+            "default": "",
+            "examples": ["A couple of sentences describing the attribute"],
+            "pattern": "^(.*)$"
+          },
+          "required": {
+            "$id": "#/properties/attributes/items/properties/required",
+            "type": "boolean",
+            "title": "The Required Schema",
+            "default": false,
+            "examples": [false]
+          },
+          "defaultValue": {
+            "$id": "#/properties/attributes/items/properties/defaultValue",
+            "type": "boolean",
+            "title": "The Defaultvalue Schema",
+            "default": false,
+            "examples": [false]
+          },
+          "min": {
+            "$id": "#/properties/attributes/items/properties/min",
+            "type": "integer",
+            "title": "The Min Schema",
+            "default": 0,
+            "examples": [0]
+          },
+          "max": {
+            "$id": "#/properties/attributes/items/properties/max",
+            "type": "integer",
+            "title": "The Max Schema",
+            "default": 0,
+            "examples": [100]
+          },
+          "gwdSpecific": {
+            "$id": "#/properties/attributes/items/properties/gwdSpecific",
+            "type": "object",
+            "title": "The Gwdspecific Schema",
+            "required": ["important", "label", "advanced", "v1Name"],
+            "properties": {
+              "important": {
+                "$id": "#/properties/attributes/items/properties/gwdSpecific/properties/important",
+                "type": "boolean",
+                "title": "The Important Schema",
+                "default": false,
+                "examples": [true]
+              },
+              "label": {
+                "$id": "#/properties/attributes/items/properties/gwdSpecific/properties/label",
+                "type": "string",
+                "title": "The Label Schema",
+                "default": "",
+                "examples": ["The key in the strings file for translation"],
+                "pattern": "^(.*)$"
+              },
+              "advanced": {
+                "$id": "#/properties/attributes/items/properties/gwdSpecific/properties/advanced",
+                "type": "boolean",
+                "title": "The Advanced Schema",
+                "default": false,
+                "examples": [true]
+              },
+              "v1Name": {
+                "$id": "#/properties/attributes/items/properties/gwdSpecific/properties/v1Name",
+                "type": "string",
+                "title": "The V1name Schema",
+                "default": "",
+                "examples": ["The name of this attribute in GWD v1"],
+                "pattern": "^(.*)$"
+              }
+            }
+          }
+        }
+      }
+    },
+    "methods": {
+      "$id": "#/properties/methods",
+      "type": "array",
+      "title": "The Methods Schema",
+      "items": {
+        "$ref": "#/definitions/method"
+      }
+    },
+    "events": {
+      "$id": "#/properties/events",
+      "type": "array",
+      "title": "The Events Schema",
+      "items": {
+        "$id": "#/properties/events/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": ["name", "label", "description", "parameters"],
+        "properties": {
+          "name": {
+            "$id": "#/properties/events/items/properties/name",
+            "type": "string",
+            "title": "The Name Schema",
+            "default": "",
+            "examples": ["Name of the event"],
+            "pattern": "^(.*)$"
+          },
+          "label": {
+            "$id": "#/properties/events/items/properties/label",
+            "type": "string",
+            "title": "The Label Schema",
+            "default": "",
+            "examples": ["A human friendly name for the event"],
+            "pattern": "^(.*)$"
+          },
+          "description": {
+            "$id": "#/properties/events/items/properties/description",
+            "type": "string",
+            "title": "The Description Schema",
+            "default": "",
+            "examples": ["A couple of sentences describing the event"],
+            "pattern": "^(.*)$"
+          },
+          "parameters": {
+            "$id": "#/properties/events/items/properties/parameters",
+            "type": "string",
+            "title": "The Parameters Schema",
+            "default": "",
+            "examples": ["The parameters or the event. It is just the Event object by default"],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "metrics": {
+      "$id": "#/properties/metrics",
+      "type": "array",
+      "title": "The Metrics Schema",
+      "items": {
+        "$id": "#/properties/metrics/items",
+        "type": "object",
+        "title": "The Items Schema",
+        "required": ["eventName", "metric"],
+        "properties": {
+          "eventName": {
+            "$id": "#/properties/metrics/items/properties/eventName",
+            "type": "string",
+            "title": "The Eventname Schema",
+            "default": "",
+            "examples": ["Event occurrence that must trigger this metric"],
+            "pattern": "^(.*)$"
+          },
+          "metric": {
+            "$id": "#/properties/metrics/items/properties/metric",
+            "type": "string",
+            "title": "The Metric Schema",
+            "default": "",
+            "examples": ["The metric text to report"],
+            "pattern": "^(.*)$"
+          }
+        }
+      }
+    },
+    "nestable": {
+      "$id": "#/properties/nestable",
+      "type": "boolean",
+      "title": "The Nestable Schema",
+      "default": false,
+      "examples": [false]
+    }
+  },
+  "required": ["type", "version"]
+}
