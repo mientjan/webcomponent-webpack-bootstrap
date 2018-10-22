@@ -9,9 +9,7 @@
     "js": [
       "index.js"
     ],
-    "css":[
-      "style.css"
-    ]
+    "css":[]
   },
   "externalScripts": [
     "https://www.google.com/path/to/external/script"
